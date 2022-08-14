@@ -14,10 +14,8 @@ Each tokenId has multiples achievement and each of them could be different. Ther
 
 Data storage variables
 ```solidity
-
 mapping(uint256 => mapping(uint256 => string)) private _tokenAchievements; //_tokenAchievements[_tokenId][achievementId] = achievementString;
 mapping(uint256 => uint256) private _tokenAchievementCounter; //_tokenAchievementCounter[_tokenId] = countNum;
-
 ```
 
 Data storage functions
@@ -27,7 +25,6 @@ _addAchievement: enter the token Id and the achievement string to save the achie
 _getAchievement: enter the token Id and the archivement Id to get the specific achievement.
 
 ```solidity
-
 function _addAchievement(uint256 _tokenId, string memory newAchievementString) internal {
         require(istokenExist(_tokenId), "INVALID-TOKEN-NOT-EXIST");
         require(bytes(newAchievementString).length!=0, "INVALID-NULL-ACHIEVEMENT");
@@ -43,15 +40,13 @@ function _addAchievement(uint256 _tokenId, string memory newAchievementString) i
         require(bytes(_tokenAchievements[_tokenId][_achievementId]).length!=0, "INVALID-NULL-ACHIEVEMENT");
 
         return _tokenAchievements[_tokenId][_achievementId];
-    }
-    
+    } 
 ```
 
 ## Usage
 download all the solidity files in the ERC721T folder and import them
 
 ```solidity
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -81,13 +76,12 @@ contract SampleContract is ERC721T {
     function getTokenAchievement(uint256 _tokenId, uint256 _achievementId) public view returns(string memory) {
         return _getAchievement(_tokenId, _achievementId);
     }
-
 ```
 
 ## References
+Most of the code are from the EIP, OpenZeppelin.
 https://eips.ethereum.org/EIPS/eip-165
 https://eips.ethereum.org/EIPS/eip-721
 https://github.com/nibbstack/erc721
 https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC721
 https://ethereum.stackexchange.com/questions/15641/how-does-a-contract-find-out-if-another-address-is-a-contract
-
