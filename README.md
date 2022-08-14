@@ -5,3 +5,5 @@ Nowadays, the ERC721 token has non-fungible. However, only the token id is uniqu
 
 ## Suggestion
 Blockchain is a technology that ensure the data is immutable. So, the answer is easy - saving the NFTs data on the smart contract.
+
+## About ERC721T
