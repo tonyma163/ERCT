@@ -86,7 +86,11 @@ contract SampleContract is ERC721T {
 
 ## References
 https://eips.ethereum.org/EIPS/eip-165
+
 https://eips.ethereum.org/EIPS/eip-721
+
 https://github.com/nibbstack/erc721
+
 https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC721
+
 https://ethereum.stackexchange.com/questions/15641/how-does-a-contract-find-out-if-another-address-is-a-contract
