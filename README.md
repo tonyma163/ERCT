@@ -7,7 +7,7 @@ Nowadays, the ERC721 token has non-fungible. However, only the token id is uniqu
 Blockchain is a technology that ensure the data is immutable. So, the answer is easy - saving the NFTs data on the smart contract.
 
 ## About ERC721T
-ERC721T, a blueprint, allows each NFT could save its achievements.
+ERC721T, a blueprint, allows each of the NFTs could save its achievements.
 
 Saving data on the smart contract is great, however, the gas fee is the most important problem. Especially the NFTs on the Ethereum mainnet need to pay a heavy gas so users are not willing the write data on the smart contract often.
 
