@@ -14,7 +14,9 @@ Saving data on the smart contract is great, however, the gas fee is the most imp
 So maybe the ERC721T is more suitable on the cheaper gas fee chains like the polygon, fantom.
 
 ## Code
-Each tokenId has multiples achievement and each of them could be different. Therefore, it needs an independent counter for counting the achievement number to avoid over write the achievement.
+Most of the code are from the EIP, OpenZeppelin. If some bugs appeared, you can import the OpenZeppelin and use the data storage methods as below :P
+
+Each tokenId has multiple achievements and each of them could be different. Therefore, it needs an independent counter for counting the achievement number to avoid over write the achievement.
 
 Data storage variables
 ```solidity
@@ -83,7 +85,6 @@ contract SampleContract is ERC721T {
 ```
 
 ## References
-Most of the code are from the EIP, OpenZeppelin.
 https://eips.ethereum.org/EIPS/eip-165
 https://eips.ethereum.org/EIPS/eip-721
 https://github.com/nibbstack/erc721
