@@ -12,11 +12,39 @@ ERC721T, a blueprint, allows each NFT could save its achievements.
 ## Code
 Each tokenId has multiples achievement and each of them could be different. Therefore, it needs an independent counter for counting the achievement number to avoid over write the achievement.
 
+Data storage variables
 ```solidity
 
 mapping(uint256 => mapping(uint256 => string)) private _tokenAchievements; //_tokenAchievements[_tokenId][achievementId] = achievementString;
 mapping(uint256 => uint256) private _tokenAchievementCounter; //_tokenAchievementCounter[_tokenId] = countNum;
 
+```
+
+Data storage functions
+
+_addAchievement: enter the token Id and the achievement string to save the achievements.
+
+_getAchievement: enter the token Id and the archivement Id to get the specific achievement.
+
+```solidity
+
+function _addAchievement(uint256 _tokenId, string memory newAchievementString) internal {
+        require(istokenExist(_tokenId), "INVALID-TOKEN-NOT-EXIST");
+        require(bytes(newAchievementString).length!=0, "INVALID-NULL-ACHIEVEMENT");
+
+        uint256 _achievementId = _tokenAchievementCounter[_tokenId];
+        _tokenAchievements[_tokenId][_achievementId] = newAchievementString;
+
+        _tokenAchievementCounter[_tokenId]++;
+    }
+
+    function _getAchievement(uint256 _tokenId, uint256 _achievementId) internal view returns(string memory) {
+        require(istokenExist(_tokenId), "INVALID-TOKEN-NOT-EXIST");
+        require(bytes(_tokenAchievements[_tokenId][_achievementId]).length!=0, "INVALID-NULL-ACHIEVEMENT");
+
+        return _tokenAchievements[_tokenId][_achievementId];
+    }
+    
 ```
 
 ## Usage
