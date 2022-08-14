@@ -9,8 +9,18 @@ Blockchain is a technology that ensure the data is immutable. So, the answer is 
 ## About ERC721T
 ERC721T, a blueprint, allows each NFT could save its achievements.
 
+## Code
+Each tokenId has multiples achievement and each of them could be different. Therefore, it needs an independent counter for counting the achievement number to avoid over write the achievement.
+
+```solidity
+
+mapping(uint256 => mapping(uint256 => string)) private _tokenAchievements; //_tokenAchievements[_tokenId][achievementId] = achievementString;
+mapping(uint256 => uint256) private _tokenAchievementCounter; //_tokenAchievementCounter[_tokenId] = countNum;
+
+```
+
 ## Usage
-download all the solidity files and import them
+download all the solidity files in the ERC721T folder and import them
 
 ```solidity
 
